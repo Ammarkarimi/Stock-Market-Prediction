@@ -1,39 +1,123 @@
-# Stock Price Prediction
+# Stock Price Prediction using LSTM
 
-## Overview
+This repository contains a Jupyter Notebook that builds an LSTM neural network to predict stock closing prices using historical data.
 
-This project aims to predict stock prices on the New York Stock Exchange using machine learning techniques. The dataset spans the entire year of 2016, with 80% of the data used for training the model and the remaining 20% for testing.
+---
 
-## Dataset
+## 📈 Project Overview
 
-The dataset consists of the following files:
+The notebook:
+- Downloads historical stock data from Yahoo Finance.
+- Visualizes closing price trends.
+- Prepares time series data for training an LSTM.
+- Trains an LSTM model to predict the next day’s closing price.
+- Compares predicted vs actual prices visually.
 
-- **prices.csv:** Raw daily prices, spanning from 2010 to the end of 2016 for most companies on the stock market.
-- **prices-split-adjusted.csv:** Similar to prices but with adjustments for stock splits.
-- **securities.csv:** General company descriptions with sector divisions.
-- **fundamentals.csv:** Metrics extracted from annual SEC 10K filings (2012-2016).
+---
 
-## Getting Started
-
-### Prerequisites
+## 🛠️ Technologies Used
 
 - Python 3.x
-- Jupyter Notebook (for running the provided notebooks)
-- Required Python libraries: pandas, numpy, scikit-learn, matplotlib, seaborn, etc. (Install using `pip install -r requirements.txt`)
+- Jupyter Notebook
+- Libraries:
+  - numpy
+  - pandas
+  - matplotlib
+  - yfinance
+  - scikit-learn
+  - keras (TensorFlow backend)
 
-### Use the repo
+---
 
-You can clone the repository to your local machine:
+## ⚙️ How to Run
 
-   ```bash
-   git clone https://github.com/Ammarkarimi/stock-market-prediction.git
-```
-## Contributing
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/stock-price-prediction.git
+    cd stock-price-prediction
+    ```
 
-- Contributions are welcome! If you have suggestions for improvements, open issues, or want to contribute code, please feel free to     
-  submit a pull request.
+2. **Install requirements**
 
-## License
+    You can install required packages using:
+    ```bash
+    pip install numpy pandas matplotlib yfinance scikit-learn tensorflow
+    ```
 
-- Feel free to customize the content and structure of the README based on your project's specific details and requirements.
+3. **Run the notebook**
+    ```bash
+    jupyter notebook
+    ```
+
+4. Open `Stock Price Prediction.ipynb` and run all cells.
+
+---
+
+## 📝 Notebook Steps
+
+- **Import Libraries**  
+  All necessary Python libraries are imported.
+
+- **Fetch Data from Yahoo Finance**  
+  The notebook uses `yfinance` to download historical stock data.
+
+- **Data Visualization**  
+  Plots closing prices to show trends.
+
+- **Data Preparation**  
+  - Scales data with `MinMaxScaler`.
+  - Creates sequences of past 60 days to predict next day’s price.
+
+- **Model Building**  
+  LSTM model with:
+    - Multiple LSTM layers.
+    - Dense output layer.
+
+- **Training**  
+  Trained with Mean Squared Error loss.
+
+- **Prediction & Evaluation**  
+  - Visual comparison between predicted and actual prices.
+  - Calculation of error metrics.
+
+---
+
+## 📊 Example Outputs
+
+Plots include:
+- Closing price history
+- Loss curve during training
+- Predicted vs actual closing prices
+
+---
+
+## ✅ Requirements
+
+- Python ≥ 3.7
+- Jupyter Notebook
+- Libraries:
+  - numpy
+  - pandas
+  - matplotlib
+  - yfinance
+  - scikit-learn
+  - tensorflow / keras
+
+---
+
+## 💡 Possible Improvements
+
+- Hyperparameter tuning for LSTM layers.
+- Incorporate other features (volume, sentiment analysis).
+- Test different sequence lengths.
+- Deploy as a web app using Flask or Streamlit.
+
+---
+
+## 👤 Author
+
+**Mohammed Ammar Karimi**<br>
+💼 [LinkedIn](https://www.linkedin.com/in/mohammed-ammar)<br>
+🌐 [Website](https://ammarkarimi.vercel.app/)<br>
+📫 [Email](ammarkarimi9898@gmail.com)<br>
 
